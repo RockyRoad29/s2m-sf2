@@ -1,4 +1,5 @@
 {% extends "RRS2MBundle::base.html.twig" %}
-{% block body %}
-        <h2>Salut cher {{ name }}!</h2>
+{% block content %}
+  {{ parent() }}
+  <h2>Salut cher {{ name }}!</h2>
 {% endblock %}

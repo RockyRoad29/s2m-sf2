@@ -1,5 +1,31 @@
 {% extends "::base.html.twig" %}
 {% block title%}Bienvenue au SEL de Brest rive gauche !{% endblock %}
-{% block body %}
-        <h2>Salut cher {{ name }}!</h2>
+{% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/rrs2m/css/demo.css') }} "/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/rrs2m/css/s2m.css') }} "/>
 {% endblock %}
+{% block body %}
+   <div id="header">
+{% block header %}
+      <h1>
+        <a href="{{ path('rr_s2m_default_index') }}">
+          <img id="banner"
+            src="{{ asset('bundles/rrs2m/images/logo_wide.jpg') }}" 
+            width="100%"
+            alt="SEL2MERS" />
+        </a>
+      </h1>
+{% endblock %}
+    </div>
+    <div id="main-menu">
+{% block main_menu %}
+      <ul>
+        <li><a href="{{ path("rr_s2m_default_index") }}">Accueil</a></li>
+      </ul>
+{% endblock %}
+    </div> 
+    <div id="content">
+{% block content %}
+{% endblock %}
+</div>
+{% endblock %}{# body #}
