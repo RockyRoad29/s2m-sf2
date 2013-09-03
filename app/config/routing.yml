@@ -1,0 +1,5 @@
+rrs2_m:
+    resource: "@RRS2MBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
