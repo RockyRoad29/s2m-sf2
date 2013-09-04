@@ -9,11 +9,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/{name}", defaults={"name"="SEListe"})
+     * @Route("/")
      * @Template() 
      * default: 'S2MBundle:Default:index.html.twig' 
      */
-    public function indexAction($name)
+    public function indexAction()
+    {
+    }
+    /**
+     * @Route("/user/{name}", defaults={"name"="SEListe"})
+     * @Template() 
+     * default: 'S2MBundle:Default:user.html.twig' 
+     */
+    public function userAction($name)
     {
 	// invoque le template avec les arguments suivants
         return array('name' => $name);

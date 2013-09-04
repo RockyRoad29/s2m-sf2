@@ -1,7 +1,7 @@
 rrs2_m:
     resource: "@RRS2MBundle/Controller/"
     type:     annotation
-    prefix:   /
+#    prefix:   /
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
