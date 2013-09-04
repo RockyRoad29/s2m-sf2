@@ -1,0 +1,13 @@
+{# app/Resources/FOSUserBundle/views/layout.html.twig #}
+{# overrides the layout template located at Resources/views/layout.html.twig 
+   in the FOSUserBundle directory #}
+
+{% extends 'RRS2MBundle::base.html.twig' %}
+
+{% block title %}{{ parent() }} - Membre{% endblock %}
+
+{% block content %}
+    {# Place fos_user_content block inside of our applications content clock,
+       to preserve  the look and feel of the application.#}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
