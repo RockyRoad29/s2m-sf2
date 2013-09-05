@@ -15,6 +15,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+         return array();
     }
     /**
      * @Route("/user/{name}", defaults={"name"="SEListe"})
