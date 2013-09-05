@@ -18,11 +18,7 @@
 {% endblock %}
     </div>
     <div id="main-menu">
-{% block main_menu %}
-      <ul>
-        <li><a href="{{ path("rr_s2m_default_index") }}">Accueil</a></li>
-      </ul>
-{% endblock %}
+{{ knp_menu_render('RRS2MBundle:Builder:mainMenu') }}
     </div> 
     <div id="content">
 {% block content %}
