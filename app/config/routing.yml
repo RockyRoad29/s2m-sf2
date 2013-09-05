@@ -1,3 +1,8 @@
+rr_user:
+    resource: "@RRUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 rrs2_m:
     resource: "@RRS2MBundle/Controller/"
     type:     annotation

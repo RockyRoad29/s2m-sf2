@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new RR\S2MBundle\RRS2MBundle(),
 	    new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new RR\UserBundle\RRUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
