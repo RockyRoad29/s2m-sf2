@@ -1,4 +1,15 @@
+# file: app/config/parameters.yml
+
+# Ceci est un modèle pour votre fichier `parameters.yml`, qui 
+# est exclu du suivi de versions pour des raisons de sécurité.
+#
+# Modifiez ces valeurs selon vos besoins.
+
 parameters:
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    locale:            fr
+
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
@@ -6,10 +17,16 @@ parameters:
     database_user:     root
     database_password: ~
 
-    mailer_transport:  smtp
     mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
+    mailer_transport:  smtp
+    mailer_user:       null
+    mailer_password:   null
 
-    locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+# En production, les paramètres seront différents:
+# voir http://symfony.com/doc/current/cookbook/doctrine/multiple_entity_managers.html
+    database_prod_driver:    pdo_mysql
+    database_prod_host:      127.0.0.1
+    database_prod_port:      ~
+    database_prod_name:      symfony
+    database_prod_user:      root
+    database_prod_password:  ~
