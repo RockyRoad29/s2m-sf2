@@ -18,7 +18,7 @@ class DefaultController extends Controller
         return array();
     }
     /**
-     * @Route("/list/{categ}")
+     * @Route("/list/{categ}", defaults={"categ"="All"})
      * @Template()
      */
     public function listAction($categ)

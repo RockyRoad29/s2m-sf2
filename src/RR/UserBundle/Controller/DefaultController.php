@@ -9,11 +9,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/{name}", defaults={"name"="SEListe"})
      * @Template()
+     * default: 'RRUserBundle:Default:index.html.twig' 
      */
     public function indexAction($name)
     {
         return array('name' => $name);
     }
+
 }

@@ -1,1 +1,5 @@
-Hello {{ name }}!
+{% extends "RRS2MBundle::base.html.twig" %}
+{% block content %}
+  {{ parent() }}
+  <h2>Nos pokous n'ont pas de prix !</h2>
+{% endblock %}

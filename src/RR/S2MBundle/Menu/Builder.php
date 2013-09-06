@@ -18,8 +18,17 @@ class Builder extends ContainerAware
 	$menu->addChild('Accueil', array('route' => 'rr_s2m_default_index'));
         $menu->addChild('Connexion', array('route' => 'fos_user_security_login'));
         $menu->addChild('À propos de moâ', array(
-            'route' => 'rr_s2m_default_user',
+            'route' => 'rr_user_default_index',
             'routeParameters' => array('name' => 'Mon auguste personne vous salue !')
+        ));
+
+        $menu->addChild('Annonces', array(
+            'route' => 'rr_ads_default_index'));
+        $menu['Annonces']->addChild('Liste d\'Annonces', array(
+            'route' => 'rr_ads_default_list'));
+        $menu['Annonces']->addChild('Jardin', array(
+            'route' => 'rr_ads_default_list',
+            'routeParameters' => array('categ' => 'jardin')
         ));
         // ... add more children
 

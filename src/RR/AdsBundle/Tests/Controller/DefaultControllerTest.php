@@ -9,8 +9,8 @@ class DefaultControllerTest extends WebTestCase
     public function testIndex()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/ads');
-        $this->assertTrue($crawler->filter('html:contains("Nos pokous n\'ont pas de prix !")')->count() > 0);
+        $crawler = $client->request('GET', 'ads/');
+        $this->assertTrue($crawler->filter('html:contains("Nos pokous n\'ont pas de prix")')->count() > 0);
     }
     public function testListe()
     {

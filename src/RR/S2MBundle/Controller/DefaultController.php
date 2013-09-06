@@ -17,14 +17,4 @@ class DefaultController extends Controller
     {
          return array();
     }
-    /**
-     * @Route("/user/{name}", defaults={"name"="SEListe"})
-     * @Template() 
-     * default: 'S2MBundle:Default:user.html.twig' 
-     */
-    public function userAction($name)
-    {
-	// invoque le template avec les arguments suivants
-        return array('name' => $name);
-    }
 }
