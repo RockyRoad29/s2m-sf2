@@ -80,7 +80,7 @@ knp_menu:
 services:
     acme_main.menu_builder:
         class: RR\S2MBundle\Menu\MenuBuilder
-        arguments: ["@knp_menu.factory"]
+        arguments: ["@knp_menu.factory", "@security.context"]
 
     acme_main.menu.main:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
