@@ -1,0 +1,12 @@
+# src/RR/S2MBundle/Resources/translations/messages.fr.yml
+Symfony2 is great: J'aime Symfony2
+symfony2.great:    J'aime Symfony2
+
+sel2mers:
+    great:    J'aime le Sel2mers
+    Welcome:  Bienvenue dans le Sel2Mers
+    site:
+        welcome: Bienvenue sur la nouvelle plateforme de Sel2Mers !
+
+Hello: Bonjour
+Hello %name%: Bonjour %name% !

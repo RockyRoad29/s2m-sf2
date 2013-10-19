@@ -41,8 +41,10 @@ class MenuBuilder {
         }
         if (!$this->securityContext->isGranted('ROLE_USER') !== false) {
             $menu->addChild('Connexion', array('route' => 'fos_user_security_login'));
+            $menu->addChild('S\'inscrire', array('route' => 'fos_user_registration_register'));
         } else {
             $menu->addChild('Déconnexion', array('route' => 'fos_user_security_logout'));
+            $menu->addChild('Changer de mdp', array('route' => 'fos_user_change_password'));
 
             $username = $this->securityContext->getToken()->getUsername();
             $menu->addChild("À propos de $username", array(

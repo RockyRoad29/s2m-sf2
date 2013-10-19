@@ -1,0 +1,13 @@
+{% extends "RRS2MBundle::base.html.twig" %}
+{% block content %}
+  {{ parent() }}
+<h2>{% trans %} Hello %name% {% endtrans %}</h2>
+  <p>{{ message }} </p>
+  <p>{% trans %} Symfony2 is great {% endtrans %} </p>
+  <p>
+  {% transchoice count %}
+    {0} There are no apples|{1} There is one apple|]1,Inf] There are %count% apples
+{% endtranschoice %}
+    </p>
+
+{% endblock %}

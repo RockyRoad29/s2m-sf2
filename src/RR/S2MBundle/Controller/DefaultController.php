@@ -26,5 +26,18 @@ class DefaultController extends Controller
     {
 	// invoque le template avec les arguments suivants
         return array('name' => $name);
+        
+    }
+    /**
+     * @Route("/sandbox/{name}", defaults={"name"="SEListe"})
+     * @Template() 
+     * default: 'S2MBundle:Default:sandbox.html.twig' 
+     */
+    public function sandboxAction($name)
+    {
+	// invoque le template avec les arguments suivants
+        return array('name' => $name, 
+                'message' =>  $this->get('translator')->trans('Symfony2 is great'),
+            'count' => 1);
     }
 }
