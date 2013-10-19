@@ -1,7 +1,9 @@
 security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
-
+        #FOS\UserBundle\Model\UserInterface: sha512
+        RR\S2MBundle\Entity\User: sha512
+        
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
