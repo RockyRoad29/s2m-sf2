@@ -1,1 +1,8 @@
-Hello {{ name }}!
+{% extends "RRS2MBundle::base.html.twig" %}
+{% block content %}
+  {{ parent() }}
+<h2>Les gens</h2>
+<p>Ceci est l'espace d'accueil des utilisateurs du site de sel2Mers.</p>
+<p>Si vous recherchez comment contacter un membre, vous êtes au bon endroit.</p>
+<p>Il vous juste patienter avant que les fonctionnalités soient définies et réalisées :D</p>
+{% endblock %}

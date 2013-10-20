@@ -8,5 +8,9 @@ sel2mers:
     site:
         welcome: Bienvenue sur la nouvelle plateforme de Sel2Mers !
 
-Hello: Bonjour
+myspace:
+    description:  Ceci est votre espace personnel.
+    
+Hello: Salut
 Hello %name%: Bonjour %name% !
+About %name%:  À propos de %name% ...

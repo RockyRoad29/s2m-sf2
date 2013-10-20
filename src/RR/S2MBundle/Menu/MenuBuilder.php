@@ -6,7 +6,6 @@ namespace RR\S2MBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
 class MenuBuilder {
@@ -32,12 +31,12 @@ class MenuBuilder {
     public function createMainMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setCurrentUri($request->getRequestUri());
-        
+
         $menu->addChild('Accueil', array('route' => 'rr_s2m_default_index'));
 
         if ($this->securityContext->isGranted('ROLE_ADMIN') !== false) {
             // $menu->addChild('Admin', array('route' => 'rr_s2m_admin_index'));
-             $menu->addChild('Admin', array('route' => 'rr_s2m_default_index'));
+            $menu->addChild('Admin', array('route' => 'rr_s2m_default_index'));
         }
         if (!$this->securityContext->isGranted('ROLE_USER') !== false) {
             $menu->addChild('Connexion', array('route' => 'fos_user_security_login'));
@@ -45,12 +44,15 @@ class MenuBuilder {
         } else {
             $menu->addChild('Déconnexion', array('route' => 'fos_user_security_logout'));
             $menu->addChild('Changer de mdp', array('route' => 'fos_user_change_password'));
+            $menu->addChild('Mon Espace', array('route' => 'rr_user_default_myspace'));
+            /*
+              $username = $this->securityContext->getToken()->getUsername();
+              $menu->addChild("À propos de $username", array(
+              'route' => 'rr_s2m_default_user',
+              'routeParameters' => array('name' => $username)
+              ));
 
-            $username = $this->securityContext->getToken()->getUsername();
-            $menu->addChild("À propos de $username", array(
-                'route' => 'rr_s2m_default_user',
-                'routeParameters' => array('name' => $username)
-            ));
+             */
         }
         // ... add more children
 

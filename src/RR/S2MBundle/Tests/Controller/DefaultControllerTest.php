@@ -6,30 +6,26 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
+           private $client = null;
+
+    public function setUp()
+    {
+        $this->client = static::createClient();
+    }
+
+
     public function testIndex()
     {
-        $client = static::createClient();
-
-        $crawler = $client->request('GET', '/');
+        $crawler = $this->client->request('GET', '/');
 
         $this->assertTrue($crawler->filter('html:contains("Bienvenue")')->count() > 0);
     }
 
-    public function testUserName()
+    public function testSandbox()
     {
-        $client = static::createClient();
-
-        $crawler = $client->request('GET', '/user/tester');
-
-        $this->assertTrue($crawler->filter('html:contains("Salut cher tester")')->count() > 0);
-    }
-
-    public function testUserDefault()
-    {
-        $client = static::createClient();
-
-        $crawler = $client->request('GET', '/user');
-
-        $this->assertTrue($crawler->filter('html:contains("Salut cher SEListe")')->count() > 0);
+        $crawler = $this->client->request('GET', '/sandbox/Castle');
+        //$content = $crawler->filter('#content');
+        $this->assertTrue($crawler->filter('#content:contains("Castle")')->count() > 0);
+        $this->assertTrue($crawler->filter('#content:contains("aime Symfony2")')->count() > 0);
     }
 }

@@ -1,0 +1,18 @@
+{% extends "RRS2MBundle::base.html.twig" %}
+{# trans_default_domain 'FOSUserBundle' #}
+{% block content %}
+  {{ parent() }}
+{#
+<h2>{{Hello %name%|trans({'%name%': 'Fabien'}, "app")}}</h2> 
+<h3>{% trans with { '%name%': user.username } %}Hello %name%{% endtrans %}</h3>
+#}
+<h2>:) {% trans %}Hello{% endtrans %} {{ user.username }} </h2>
+<p>{% trans %}myspace.description{% endtrans %}</p>
+
+<div class="fos_user_user_show">
+
+    <p>{% trans from 'FOSUserBundle' %}profile.show.username{%endtrans%}: {{ user.username }}</p>
+
+        <p>{{ 'profile.show.email'| trans({},"FOSUserBundle")}}:  {{ user.email }}</p>
+</div>
+ {% endblock %}
