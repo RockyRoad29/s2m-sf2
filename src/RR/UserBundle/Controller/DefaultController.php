@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-//use JMS\SecurityExtraBundle\Annotation\Secure;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DefaultController extends Controller {
@@ -40,15 +40,10 @@ class DefaultController extends Controller {
     /**
      * This will return the profile page of the connected user.
      * @Route("/myspace")
-     * @ Secure(roles="ROLE_USER")
+     * @Secure(roles="ROLE_USER")
      * @Template()
      */
     public function myspaceAction() {
-        if (false === $this->get('security.context')->isGranted('ROLE_USER')) {
-            throw new AccessDeniedException();
-        }
-
-
         $user = $this->getConnectedUser();
 
 //        return array('user' => array('name' => $user->getUserName()));
